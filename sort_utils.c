@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: avitolin <avitolin@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:43:00 by avitolin          #+#    #+#             */
-/*   Updated: 2021/12/15 16:30:51 by avitolin         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:31:48 by avitolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft/libft.h"
 
 int	stack_min(t_list *stack)
 {

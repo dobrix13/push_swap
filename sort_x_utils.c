@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_x_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: avitolin <avitolin@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 20:18:26 by avitolin          #+#    #+#             */
-/*   Updated: 2021/12/15 16:30:49 by avitolin         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:29:53 by avitolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
 static int	stack_idx_mid(t_list *stack, int num)
 {
@@ -39,18 +40,18 @@ static int	stack_idx_mid(t_list *stack, int num)
 int	stack_idx_minmax(t_list *stack, int num)
 {
 	int			ret;
-	int			tmp;
+	int			x;
 	const int	size = ft_lstsize(stack);
 
 	ret = 0;
-	tmp = stack_max(stack);
+	x = stack_max(stack);
 	if (num <= stack_min(stack))
-		tmp = stack_min(stack);
+		x = stack_min(stack);
 	else
 		++ret;
 	while (stack)
 	{
-		if (ft_atoi(stack->content) == tmp)
+		if (ft_atoi(stack->content) == x)
 			break ;
 		++ret;
 		stack = stack->next;
@@ -65,21 +66,21 @@ void	get_min_rotate(t_list *stack_a, t_list *stack_b, int *a, int *b)
 	int			i;
 	int			j;
 	int			num;
-	int			tmp;
+	int			x;
 	const int	size_b = ft_lstsize(stack_b);
 
-	tmp = -1;
-	while (stack_b && ++tmp >= 0)
+	x = -1;
+	while (stack_b && ++x >= 0)
 	{
 		num = ft_atoi(stack_b->content);
 		if (num < stack_min(stack_a) || num > stack_max(stack_a))
 			i = stack_idx_minmax(stack_a, num);
 		else
 			i = stack_idx_mid(stack_a, num);
-		j = tmp;
-		if (tmp >= (size_b + 1) / 2)
-			j = -1 * (size_b - tmp);
-		if (tmp == 0 || ft_abs(*a) + ft_abs(*b) > ft_abs(i) + ft_abs(j))
+		j = x;
+		if (x >= (size_b + 1) / 2)
+			j = -1 * (size_b - x);
+		if (x == 0 || ft_abs(*a) + ft_abs(*b) > ft_abs(i) + ft_abs(j))
 		{
 			*a = i;
 			*b = j;

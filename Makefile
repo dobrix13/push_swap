@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/15 16:30:40 by avitolin          #+#    #+#              #
-#    Updated: 2021/12/15 16:30:44 by avitolin         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 SOURCES = \
 	push_swap.c push_swap_utils.c instructions.c sort.c sort_utils.c \
 	sort_x_utils.c

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avitolin <avitolin@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:23:28 by avitolin          #+#    #+#             */
-/*   Updated: 2021/12/14 13:53:19 by avitolin         ###   ########.fr       */
+/*   Updated: 2021/12/28 13:37:05 by avitolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 /*
 **	push_swap_utils.c
 */
+//static int	has_duplicate(int *n, int len);
 int		split_argv(char ***tempstr, char **argv, char *c);
 int		is_valid(char **tempstr);
 int		is_sorted(t_list *stack);

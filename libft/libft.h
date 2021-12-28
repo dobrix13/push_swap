@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: avitolin <avitolin@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 23:01:58 by avitolin          #+#    #+#             */
-/*   Updated: 2021/12/15 16:32:52 by avitolin         ###   ########.fr       */
+/*   Updated: 2021/12/14 13:41:40 by avitolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memset (void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *d, const void *s, size_t n);
 int		ft_atoi(const char *str);

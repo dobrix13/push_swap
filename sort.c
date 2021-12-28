@@ -11,23 +11,24 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
 static void	sort_3(t_list **stack)
 {
-	const int	n_1 = ft_atoi((*stack)->content);
-	const int	n_2 = ft_atoi((*stack)->next->content);
-	const int	n_3 = ft_atoi((*stack)->next->next->content);
+	const int	num_1 = ft_atoi((*stack)->content);
+	const int	num_2 = ft_atoi((*stack)->next->content);
+	const int	num_3 = ft_atoi((*stack)->next->next->content);
 
-	if (n_1 == stack_min(*stack) && n_2 == stack_max(*stack))
+	if (num_1 == stack_min(*stack) && num_2 == stack_max(*stack))
 	{
 		exec("sa", stack, 0, 1);
 		exec("ra", stack, 0, 1);
 	}
-	else if (n_2 == stack_min(*stack) && n_3 == stack_max(*stack))
+	else if (num_2 == stack_min(*stack) && num_3 == stack_max(*stack))
 		exec("sa", stack, 0, 1);
-	else if (n_3 == stack_min(*stack) && n_2 == stack_max(*stack))
+	else if (num_3 == stack_min(*stack) && num_2 == stack_max(*stack))
 		exec("rra", stack, 0, 1);
-	else if (n_2 == stack_min(*stack) && n_1 == stack_max(*stack))
+	else if (num_2 == stack_min(*stack) && num_1 == stack_max(*stack))
 		exec("ra", stack, 0, 1);
 	else
 	{

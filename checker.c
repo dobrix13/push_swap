@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avitolin <avitolin@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: avitolin <avitolin@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:56:53 by avitolin          #+#    #+#             */
-/*   Updated: 2021/12/14 15:20:20 by avitolin         ###   ########.fr       */
+/*   Updated: 2021/12/28 13:27:37 by avitolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "push_swap.h"
+#include "libft/libft.h"
 
-static void	free_s(char **str_sp)
+static void	ps_free(char **strs)
 {
 	int	i;
 
 	i = 0;
-	while (str_sp[i])
-		free(str_sp[i++]);
-	free(str_sp);
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
 }
 
 static int	ps_error(void)
@@ -28,7 +30,7 @@ static int	ps_error(void)
 	return (1);
 }
 
-static int	execute(char *str, t_list **stack_1, t_list **stack_2)
+static int	parse(char *str, t_list **stack_1, t_list **stack_2)
 {
 	int	len;
 	int	(*f)(const char *, const char *, size_t);
@@ -70,7 +72,7 @@ static void	sort_check(t_list **stack_a)
 			free(cmd);
 			break ;
 		}
-		if (execute(cmd, stack_a, &stack_b))
+		if (parse(cmd, stack_a, &stack_b))
 		{
 			free(str);
 			free(cmd);
@@ -87,25 +89,25 @@ static void	sort_check(t_list **stack_a)
 int	main(int argc, char **argv)
 {
 	int		len;
-	char	**str_sp;
+	char	**strs;
 	t_list	*stack;
 
 	if (argc > 1)
 	{
-		str_sp = 0;
-		len = split_argv(&str_sp, argv + 1, " ");
-		if (!len || !is_valid(str_sp))
+		strs = 0;
+		len = split_argv(&strs, argv + 1, " ");
+		if (!len || !is_valid(strs))
 		{
-			free_s(str_sp);
+			ps_free(strs);
 			ft_putendl_fd("Error", 2);
 			return (1);
 		}
 		stack = 0;
 		while (len--)
-			ft_lstadd_front(&stack, ft_lstnew(str_sp[len]));
+			ft_lstadd_front(&stack, ft_lstnew(strs[len]));
 		sort_check(&stack);
 		ft_lstclear(&stack, free);
-		free(str_sp);
+		free(strs);
 	}
 	return (0);
 }

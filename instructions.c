@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft/libft.h"
 
 static void	sx(t_list **stack_1, t_list **stack_2)
 {

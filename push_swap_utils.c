@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <limits.h>
+#include <stdlib.h>
+#include "libft/libft.h"
 
 static int	is_int(char *str)
 {

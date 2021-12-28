@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "push_swap.h"
+#include "libft/libft.h"
 
 static void	ps_free(char **strs)
 {
